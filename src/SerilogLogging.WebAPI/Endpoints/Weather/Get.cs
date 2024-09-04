@@ -1,10 +1,16 @@
 ﻿
+using Serilog;
+
 namespace SerilogLogging.WebAPI.Endpoints.Weather
 {
     internal sealed class Get : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
+            string requestName = "Get weather forecast request";
+
+            Log.Information("Request started at {0} {1}", DateTime.Now, requestName);
+
             var summaries = new[]
             {
                 "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -24,6 +30,8 @@ namespace SerilogLogging.WebAPI.Endpoints.Weather
             })
             .WithName("GetWeatherForecast")
             .WithOpenApi();
+
+            Log.Information("Request finished at {0} {1}", DateTime.Now, requestName);
         }
     }
 }

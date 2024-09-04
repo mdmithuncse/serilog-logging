@@ -1,3 +1,4 @@
+using Serilog;
 using SerilogLogging.WebAPI.Extensions;
 using System.Reflection;
 
@@ -19,6 +20,10 @@ namespace SerilogLogging.WebAPI
             // Add services for endpoints
             builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
+            // Add serilog configuration
+            builder.Host.UseSerilog((context, configuration) =>
+            configuration.ReadFrom.Configuration(context.Configuration));
+
             WebApplication app = builder.Build();
 
             app.MapEndpoints();
@@ -29,6 +34,8 @@ namespace SerilogLogging.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseSerilogRequestLogging();
 
             app.UseHttpsRedirection();
 

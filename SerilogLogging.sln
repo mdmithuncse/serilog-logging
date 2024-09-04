@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E5554A2-084
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AE0A2106-56EE-4237-8511-26853F6A906E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogLogging.WebAPI", "src\SerilogLogging.WebAPI\SerilogLogging.WebAPI.csproj", "{C9ACA245-6036-47FB-AC03-833231C11746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogLogging.WebAPI", "src\SerilogLogging.WebAPI\SerilogLogging.WebAPI.csproj", "{C9ACA245-6036-47FB-AC03-833231C11746}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
